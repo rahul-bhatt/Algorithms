@@ -35,6 +35,10 @@ package conceptsandalgorithms.sortingandsearching;
  * ----------------
  * Worst: O(log n)
  * 
+ * Stable Sorting?
+ * ---------------- 
+ * NO
+ * 
  * @author Rahul
  */
 public class QuickSort {
