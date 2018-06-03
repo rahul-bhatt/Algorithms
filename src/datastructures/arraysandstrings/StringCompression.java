@@ -14,10 +14,14 @@ public class StringCompression {
 	public static void main(String[] args) {
 		System.out.println("Compressed string for aabcccccaaa: " + compressString("aabcccccaaa"));
 		System.out.println("Compressed string for abc: " + compressString("abc"));
+		
+		System.out.println("Compressed string for aabcccccaaa without using StringBuffer: " + compressAlternate("aabcccccaaa"));
+		System.out.println("Compressed string for abc without using StringBuffer: " + compressAlternate("abc"));
 	}
 
 	/*
-	 * Algorithm: Scan through the keeping track of previous character and counts.
+	 * Algorithm 1: Using StringBuffer
+	 * Scan through the keeping track of previous character and counts.
 	 * Use StringBuffer for improved performance, otherwise String concatenation would an
 	 * expensive operation (O(n*2)).
 	 */
@@ -52,7 +56,7 @@ public class StringCompression {
 	}
 	
 	/*
-	 * Count the size of the compressed string vs prgional string.
+	 * Count the size of the compressed string vs original string.
 	 */
 	private static int countCompressedString(String str) {
 		if(str == null || str.isEmpty()) return 0;
@@ -73,6 +77,56 @@ public class StringCompression {
 		
 		size += 1 + String.valueOf(count).length();
 		return size;
+	}
+	
+	/*
+	 * Algorithm 2: Without using StringBuffer
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 */
+	private static String compressAlternate(String str) {
+		// Check if compression would create a longer string
+		int size = countCompressedString(str);
+		if(size > str.length()) {
+			return str;
+		}
+		
+		// Create a character array of the size of the compressed string
+		char[] array = new char[size];
+		int index = 0;
+		char last = str.charAt(0);
+		int count = 1;
+		
+		for(int i = 1; i < str.length(); i++) {
+			if(str.charAt(i) == last) {
+				count++;
+			} else {
+				// Update the repeated character count
+				index = setChar(array, last, index, count);
+				last = str.charAt(i);
+				count = 1;
+			}
+		}
+		
+		index = setChar(array, last, index, count);
+		
+		return String.valueOf(array);
+	}
+	
+	private static int setChar(char[] array, char c, int index, int count) {
+		array[index] = c;
+		index++;
+		
+		// Convert the count to a string, then to an array of chars
+		char[] cnt = String.valueOf(count).toCharArray();
+		
+		// Copy characters from biggest digit to smallest
+		for(char x : cnt) {
+			array[index] = x;
+			index++;
+		}
+		
+		return index;
 	}
 
 }
