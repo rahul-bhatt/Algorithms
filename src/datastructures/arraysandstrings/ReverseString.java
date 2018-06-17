@@ -4,19 +4,42 @@
 package datastructures.arraysandstrings;
 
 /**
- * Implement an algorithm to reverse a String.
+ * Implement an algorithm to reverse a String without using any extra space.
+ * 
+ * Algorithm: We can start with swapping the element at the start and the end and continue the comparison and swap operation
+ * till we reach the middle of the string.
+ * 
+ * For swap operation we can use XOR operator.
+ * 
+ * x = x ^ y;
+ * y = x ^ y;
+ * x = x ^ y;
  * 
  * @author Rahul
  *
  */
 public class ReverseString {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ReverseString str = new ReverseString();
+		System.out.println("Reverse of String abc is: " + str.reverseString(new StringBuilder("abc")).toString());
+	}
+	
+	public StringBuilder reverseString(StringBuilder str) {
+		int i = 0;
+		int j = str.length() - 1;
+		
+		while (i != j) {
 
+			str.setCharAt(i, (char) (str.charAt(i) ^ str.charAt(j)));
+			str.setCharAt(j, (char) (str.charAt(i) ^ str.charAt(j)));
+			str.setCharAt(i, (char) (str.charAt(i) ^ str.charAt(j)));
+			
+			i++;
+			j--;
+		}
+		
+		return str;
 	}
 
 }
