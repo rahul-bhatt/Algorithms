@@ -22,7 +22,7 @@ public class ReverseString {
 
 	public static void main(String[] args) {
 		ReverseString str = new ReverseString();
-		System.out.println("Reverse of String abc is: " + str.reverseString(new StringBuilder("abc")).toString());
+		System.out.println("Reverse of String aba is: " + str.reverseString(new StringBuilder("aba")).toString());
 	}
 	
 	public StringBuilder reverseString(StringBuilder str) {
