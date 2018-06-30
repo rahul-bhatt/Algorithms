@@ -1,4 +1,4 @@
-package datastructures.arraysandstrings;
+package arraysandstrings;
 
 /**
  * @author rahulbhatt

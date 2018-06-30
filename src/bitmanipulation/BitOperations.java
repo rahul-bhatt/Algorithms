@@ -1,4 +1,4 @@
-package conceptsandalgorithms.bitmanipulation;
+package bitmanipulation;
 
 /**
  * Common Bit wise operations and tricks.

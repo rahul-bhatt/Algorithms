@@ -1,7 +1,7 @@
 /**
  * 
  */
-package datastructures.arraysandstrings;
+package arraysandstrings;
 
 /**
  * Implement an algorithm to replace all spaces in a string with "%20".

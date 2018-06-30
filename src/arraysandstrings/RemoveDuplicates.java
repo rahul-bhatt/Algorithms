@@ -1,7 +1,7 @@
 /**
  * 
  */
-package datastructures.arraysandstrings;
+package arraysandstrings;
 
 import java.util.HashSet;
 

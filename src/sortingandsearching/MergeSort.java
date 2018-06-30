@@ -1,4 +1,4 @@
-package conceptsandalgorithms.sortingandsearching;
+package sortingandsearching;
 
 /**
  * Merge sort is an efficient, general-purpose, comparison-based sorting algorithm. 

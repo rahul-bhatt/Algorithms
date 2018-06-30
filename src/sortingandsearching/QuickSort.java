@@ -1,4 +1,4 @@
-package conceptsandalgorithms.sortingandsearching;
+package sortingandsearching;
 
 /**
  * Quicksort is a divide and conquer algorithm which relies on a partition operation: \

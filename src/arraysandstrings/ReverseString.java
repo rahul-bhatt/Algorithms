@@ -1,7 +1,7 @@
 /**
  * 
  */
-package datastructures.arraysandstrings;
+package arraysandstrings;
 
 /**
  * Implement an algorithm to reverse a String without using any extra space.

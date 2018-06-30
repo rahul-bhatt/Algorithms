@@ -1,7 +1,7 @@
 /**
  * 
  */
-package datastructures.arraysandstrings;
+package arraysandstrings;
 
 /**
  * Given two Strings, implement an algorithm to determine if
