@@ -1,4 +1,4 @@
-package sortingandsearching;
+package sorting;
 
 /**
  * Merge sort is an efficient, general-purpose, comparison-based sorting algorithm. 

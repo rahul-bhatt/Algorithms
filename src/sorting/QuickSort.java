@@ -1,4 +1,4 @@
-package sortingandsearching;
+package sorting;
 
 /**
  * Quicksort is a divide and conquer algorithm which relies on a partition operation: \
