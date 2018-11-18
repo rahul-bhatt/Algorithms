@@ -1,6 +1,3 @@
-/**
- * 
- */
 package searching;
 
 /**
@@ -8,6 +5,11 @@ package searching;
  *
  * Problem: FINDING THE MIN AND MAX SIMULTANEOUSLY
  * ***********************************************
+ * 
+ * Find the min and max elements from an array of n > 0 elements using no more than ceil(3n/2) - 2 comparisons.
+ * 
+ * Solution: 
+ * 
  */
 public class SearchProblem12 {
 

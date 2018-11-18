@@ -8,6 +8,11 @@ package searching;
  * 
  * Problem: COMPUTING SQUARE ROOTS
  * ********************************
+ * 
+ * Implement a function which takes as input a floating point variable x and returns √x.
+ * 
+ * Solution:
+ * 
  */
 public class SearchProblem9 {
 
