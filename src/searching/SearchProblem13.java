@@ -1,6 +1,3 @@
-/**
- * 
- */
 package searching;
 
 /**
@@ -22,9 +19,6 @@ package searching;
  */
 public class SearchProblem13 {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		SearchProblem13 prob = new SearchProblem13();
 		int[] a = { 1, 2, 3, 4, 5 };
