@@ -26,7 +26,7 @@ public class BSTFromArray {
 	}
 
 	public static void main(String[] args) {
-		int arr[] = {4,5,7,8,9,10,20};
+		int arr[] = {1,2,3,4};
 		BSTFromArray tree = new BSTFromArray();
 		BSTNode root = tree.createBST(arr, 0, arr.length - 1);
 		tree.setRoot(root);
@@ -41,19 +41,15 @@ public class BSTFromArray {
 	}
 
 	public BSTNode createBST(int[] arr, int beg, int end) {
-		int size = end - beg + 1;
+		if(beg > end) return null;
 
 		BSTNode root = null;
 
-		if(size == 1) {
-			root = new BSTNode(arr[beg]);
-		} else {
-			int middle = beg + size/2;
-			root = new BSTNode(arr[middle]);
-			root.setLeft(createBST(arr, beg, middle - 1));
-			root.setRight(createBST(arr, middle + 1, end));
-		}
-
+		int middle = (beg+end)/2;
+		root = new BSTNode(arr[middle]);
+		root.setLeft(createBST(arr, beg, middle - 1));
+		root.setRight(createBST(arr, middle + 1, end));
+		
 		return root;
 	}
 
