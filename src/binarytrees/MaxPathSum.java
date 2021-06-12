@@ -42,8 +42,12 @@ public class MaxPathSum {
 			int maxRight = maxPathSum(root.right);
 			
 			// Important part of this algorithm: See comments above
-			int maxNode = Math.max(Math.max(maxLeft, maxRight), root.val);
+			// For max path sum of the parent node only one of the child can be
+			// present in the max path
+			int maxNode = Math.max(Math.max(maxLeft, maxRight) + root.val, root.val);
 			
+			// This is max path sum at this node only wherein the current node
+			// is at the root level
 			int maxPath = Math.max(maxNode, maxLeft + maxRight + root.val);
 			
 			if(maxPath > maxSum) {
