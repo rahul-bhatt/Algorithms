@@ -50,11 +50,16 @@ package dynamicprogramming;
  	 Space complexity: O(N).
  */
 
+/*
+ 	There is an alternative solution as well. If the number is even return true 
+ 	else return false. There is a mathematical proof for that.
+ */
+
 public class DivisorGame {
 
 		public static void main(String[] args) {
 			DivisorGame game = new DivisorGame();
-			int n = 17;
+			int n = 2;
 			Boolean[] cache = new Boolean[n + 1];
 			
 			System.out.println(game.canWin(n, cache));
@@ -72,10 +77,12 @@ public class DivisorGame {
 			}
 			
 			// Backtracking, Recursion
-			for(int x = 1; x < n/2; x++) { // if x is a factor of n, it can not be greater than n/2
-				if(!canWin(n - x, cache)) {
-					cache[n - x] = true;
-					return true;
+			for(int x = 1; x <= n/2; x++) { // if x is a factor of n, it can not be greater than n/2
+				if(n % x == 0) {
+					if(!canWin(n - x, cache)) {
+						cache[n] = true;
+						return true;
+					}
 				}
 			}
 			
