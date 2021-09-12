@@ -3,6 +3,8 @@ package binarytrees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import binarytrees.InsertBST.BSTNode;
+
 /**
  * @author rahulbhatt
  *
@@ -10,27 +12,29 @@ import java.util.Queue;
 public class LevelOrder {
     BinaryTreeNode root;
 
-    public LevelOrder(BinaryTreeNode root) {
-      this.root = root;
-    }
+    
+	public BinaryTreeNode getRoot() {
+		return root;
+	}
 
+	public void createTree() {
+		root = new BinaryTreeNode(1);
+		root.setLeftChild(new BinaryTreeNode(2));
+		root.setRightChild(new BinaryTreeNode(3));
+		
+		root.getRightChild().setLeftChild(new BinaryTreeNode(4));
+		root.getRightChild().setRightChild(new BinaryTreeNode(5));
+		
+		root.getLeftChild().setLeftChild(new BinaryTreeNode(6));
+		root.getLeftChild().setRightChild(new BinaryTreeNode(7));
+	}
+	
     public static void main(String[] args) {
-      BinaryTreeNode rootNode = new BinaryTreeNode(1);
 
-      rootNode.setLeftChild(new BinaryTreeNode(2));
-      rootNode.setRightChild(new BinaryTreeNode(3));
+      LevelOrder tree = new LevelOrder();
+      tree.createTree();
 
-      BinaryTreeNode leftNode = rootNode.getLeftChild();
-      BinaryTreeNode rightNode = rootNode.getRightChild();
-
-      leftNode.setLeftChild(new BinaryTreeNode(4));
-      leftNode.setRightChild(new BinaryTreeNode(5));
-
-      rightNode.setLeftChild(new BinaryTreeNode(6));
-      rightNode.setRightChild(new BinaryTreeNode(7));
-
-      LevelOrder tree = new LevelOrder(rootNode);
-
+      BinaryTreeNode rootNode = tree.getRoot();
       tree.levelOrderUsingQueue(rootNode);
     }
 
@@ -52,40 +56,41 @@ public class LevelOrder {
           }
       }
     }
+    
+    class BinaryTreeNode {
+    	  int data;
+    	  BinaryTreeNode left;
+    	  BinaryTreeNode right;
+
+    	  public BinaryTreeNode(int data) {
+    	    this.data = data;
+    	    left = null;
+    	    right = null;
+    	  }
+
+    	  public int getData() {
+    	    return data;
+    	  }
+
+    	  public void setData(int data) {
+    	    this.data = data;
+    	  }
+
+    	  public BinaryTreeNode getLeftChild() {
+    	    return left;
+    	  }
+
+    	  public void setLeftChild(BinaryTreeNode node) {
+    	    this.left = node;
+    	  }
+
+    	  public BinaryTreeNode getRightChild() {
+    	    return right;
+    	  }
+
+    	  public void setRightChild(BinaryTreeNode node) {
+    	    this.right = node;
+    	  }
+    	}
 }
 
-class BinaryTreeNode {
-  int data;
-  BinaryTreeNode left;
-  BinaryTreeNode right;
-
-  public BinaryTreeNode(int data) {
-    this.data = data;
-    left = null;
-    right = null;
-  }
-
-  public int getData() {
-    return data;
-  }
-
-  public void setData(int data) {
-    this.data = data;
-  }
-
-  public BinaryTreeNode getLeftChild() {
-    return left;
-  }
-
-  public void setLeftChild(BinaryTreeNode node) {
-    this.left = node;
-  }
-
-  public BinaryTreeNode getRightChild() {
-    return right;
-  }
-
-  public void setRightChild(BinaryTreeNode node) {
-    this.right = node;
-  }
-}

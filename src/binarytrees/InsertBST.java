@@ -1,5 +1,7 @@
 package binarytrees;
 
+import binarytrees.FindBST.BSTNode;
+
 /*
     Insert an element in to a BST.
     Search for the element to be inserted and insert at its right location.
@@ -12,33 +14,30 @@ package binarytrees;
 public class InsertBST {
 	private BSTNode root;
 
-	public InsertBST(BSTNode root) {
-		this.root = root;
+	public void createTree() {
+		root = new BSTNode(10);
+		root.left = new BSTNode(8);
+		root.right = new BSTNode(15);
+		root.right.left = new BSTNode(12);
+		root.right.right = new BSTNode(20);
+		root.left.left = new BSTNode(6);
+		root.left.right = new BSTNode(9);
 	}
-
+	
 	public static void main(String[] args) {
-		BSTNode root = new BSTNode(10);
-		root.setRight(new BSTNode(15));
-		root.setLeft(new BSTNode(8));
 
-		BSTNode left = root.getLeft();
-		BSTNode right = root.getRight();
-
-		left.setRight(new BSTNode(9));
-		left.setLeft(new BSTNode(6));
-
-		right.setRight(new BSTNode(20));
-		right.setLeft(new BSTNode(12));
-
-		InsertBST tree = new InsertBST(root);
+		InsertBST tree = new InsertBST();
+		tree.createTree();
+		
 		System.out.println("BST before insertion");
-		tree.printTree(root);
+		tree.printTree(tree.getRoot());
+		
 		System.out.println("\nAfter inserting 11");
-		tree.insert(root, 11);
-		tree.printTree(root);
+		tree.insert(11);
+		tree.printTree(tree.getRoot());
 	}
 
-	public BSTNode insert(BSTNode root, int data) {
+	public BSTNode insert(int data) {
 		if(root == null) {
 			BSTNode node = new BSTNode(data);
 			return node;
@@ -72,39 +71,46 @@ public class InsertBST {
 		if(root.getLeft() != null) printTree(root.getLeft());
 		if(root.getRight() != null) printTree(root.getRight());		
 	}
-}
-class BSTNode {
-	int data;
-	BSTNode left;
-	BSTNode right;
-
-	public BSTNode(int data) {
-		this.data = data;
-		left = null;
-		right = null;
+	
+	
+	
+	public BSTNode getRoot() {
+		return root;
 	}
 
-	public int getData() {
-		return data;
-	}
+	class BSTNode {
+		int data;
+		BSTNode left;
+		BSTNode right;
 
-	public void setData(int data) {
-		this.data = data;
-	}
+		public BSTNode(int data) {
+			this.data = data;
+			left = null;
+			right = null;
+		}
 
-	public BSTNode getLeft() {
-		return left;
-	}
+		public int getData() {
+			return data;
+		}
 
-	public void setLeft(BSTNode left) {
-		this.left = left;
-	}
+		public void setData(int data) {
+			this.data = data;
+		}
 
-	public BSTNode getRight() {
-		return right;
-	}
+		public BSTNode getLeft() {
+			return left;
+		}
 
-	public void setRight(BSTNode right) {
-		this.right = right;
+		public void setLeft(BSTNode left) {
+			this.left = left;
+		}
+
+		public BSTNode getRight() {
+			return right;
+		}
+
+		public void setRight(BSTNode right) {
+			this.right = right;
+		}
 	}
 }
