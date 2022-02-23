@@ -16,6 +16,8 @@ public class PalindromeNumber {
 
 	//Time: O(n), Space: O(1)
 	public static boolean isPalindrome(int x) {
+		if(x < 0) return false;
+		
 		int div = 1;
 		while(x > 10 * div) {
 			div = div * 10;
