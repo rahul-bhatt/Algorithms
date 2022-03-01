@@ -1,7 +1,7 @@
 /**
  * 
  */
-package arraysandstrings;
+package arrays;
 
 /**
  * Implement an algorithm to replace all spaces in a string with "%20".

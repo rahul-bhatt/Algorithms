@@ -1,4 +1,4 @@
-package arraysandstrings;
+package arrays;
 
 /**
  * @author rahulbhatt

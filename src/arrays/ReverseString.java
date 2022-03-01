@@ -1,7 +1,7 @@
 /**
  * 
  */
-package arraysandstrings;
+package arrays;
 
 /**
  * Implement an algorithm to reverse a String without using any extra space.

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package arraysandstrings;
+package arrays;
 
 /**
  * given an image represented by an N*N matrix where each pixel in the image is 4 bytes,

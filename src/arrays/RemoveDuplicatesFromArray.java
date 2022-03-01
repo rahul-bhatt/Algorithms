@@ -1,4 +1,4 @@
-package arraysandstrings;
+package arrays;
 
 /**
  * Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place 

@@ -1,4 +1,4 @@
-package arraysandstrings;
+package arrays;
 
 /**
  * Given two sorted arrays of size m and n, find the median of the merged sorted array.

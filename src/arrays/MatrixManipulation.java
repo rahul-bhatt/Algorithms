@@ -1,7 +1,7 @@
 /**
  * 
  */
-package arraysandstrings;
+package arrays;
 
 /**
  * Implement an algorithm such that if an element in an M*N matrix is 0, its entire row and column
