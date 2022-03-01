@@ -1,7 +1,7 @@
 /**
  * 
  */
-package arrays;
+package strings;
 
 /**
  * Given two Strings, implement an algorithm to determine if

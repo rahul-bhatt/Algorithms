@@ -1,7 +1,7 @@
 /**
  * 
  */
-package arrays;
+package strings;
 
 /**
  * @author rahulbhatt
