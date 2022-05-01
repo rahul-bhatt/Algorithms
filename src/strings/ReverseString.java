@@ -22,14 +22,14 @@ public class ReverseString {
 
 	public static void main(String[] args) {
 		ReverseString str = new ReverseString();
-		System.out.println("Reverse of String aba is: " + str.reverseString(new StringBuilder("aba")).toString());
+		System.out.println("Reverse of String aba is: " + str.reverseString(new StringBuilder("abcd")).toString());
 	}
 	
 	public StringBuilder reverseString(StringBuilder str) {
 		int i = 0;
 		int j = str.length() - 1;
 		
-		while (i != j) {
+		while (i < j) {
 
 			str.setCharAt(i, (char) (str.charAt(i) ^ str.charAt(j)));
 			str.setCharAt(j, (char) (str.charAt(i) ^ str.charAt(j)));
