@@ -55,4 +55,35 @@ public class NonRepeating {
 			return res;
 		}
 	}
+
+
+	// Time - O(n^2) | space : O(1)
+	public static int firstNonRepeatingWithoutAuxSpace(String str) {
+		boolean flag = false;
+
+		int index = -1;
+
+		for (int i = 0; i < str.length(); i++) {
+
+			// replace a character with "" and
+			// then finding the length after replacing and
+			// then subtracting  length of that replaced
+			// string from the total length of the original string
+			int count_occurence = str.length() - str.replace(Character.toString(str.charAt(i)), "").length();
+
+			if (count_occurence == 1) {
+				flag = true;
+				index = i;
+				break;
+			}
+		}
+
+		if (flag) {
+			return str.charAt(index);
+		} else {
+			return -1;
+		}
+	}
+
 }
+
